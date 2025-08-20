@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <title>刘涛｜新能源数字化产品经理</title>
+  <meta name="description" content="刘涛｜新能源数字化产品经理｜光伏/储能/BIPV/无人机｜作品集｜经历｜技能｜联系我" />
+  <meta name="theme-color" content="#1476ff" />
+  <style>
+    :root{
+      --bg:#f6faff;
+      --surface:#ffffff;
+      --text:#0b1220;
+      --muted:#5a6b85;
+      --primary:#1476ff;
+      --primary-600:#0f5ed1;
+      --line:#e6eef6;
+      --shadow:0 10px 30px rgba(16,110,255,.08);
+      --radius:14px;
+      --radius-sm:10px;
+      --nav-h:64px;
+      --container:1100px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(1200px 600px at 80% -10%, rgba(20,118,255,.08), transparent 60%),
+        radial-gradient(900px 500px at -10% 0%, rgba(20,118,255,.06), transparent 60%),
+        var(--bg);
+      line-height:1.6;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+    a{color:var(--primary);text-decoration:none}
+    img{max-width:100%;display:block}
+    .container{max-width:var(--container);margin:0 auto;padding:0 20px}
+    section{padding:60px 20px;scroll-margin-top:calc(var(--nav-h) + 12px)}
+    h1,h2,h3{line-height:1.25;margin:0 0 12px}
+    h2{font-size:28px}
+    h3{font-size:18px}
+    p{margin:0 0 12px;color:var(--muted)}
+    ul{margin:8px 0 0 18px;padding:0}
+    .muted{color:var(--muted)}
+    /* Nav */
+    .nav{
+      position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:50;
+      background:rgba(255,255,255,.78);backdrop-filter:saturate(160%) blur(10px);
+      border-bottom:1px solid rgba(230,238,246,.7);
+      transition:box-shadow .25s ease, background .25s ease;
+    }
+    .nav.stuck{box-shadow:0 6px 24px rgba(10,30,60,.06)}
+    .nav-inner{height:var(--nav-h);display:flex;align-items:center;justify-content:space-between}
+    .brand{font-weight:700;letter-spacing:.2px;color:#0b1220}
+    .brand-dot{display:inline-block;width:8px;height:8px;background:var(--primary);border-radius:50%;margin-left:6px;vertical-align:middle}
+    .nav ul{list-style:none;margin:0;padding:0;display:flex;gap:14px}
+    .nav a{
+      display:inline-block;padding:8px 10px;border-radius:10px;color:#0b1220
+    }
+    .nav a:hover{background:rgba(20,118,255,.08)}
+    /* Hero */
+    .hero{padding:90px 20px 60px}
+    .hero-wrap{display:grid;gap:20px}
+    .kicker {
+  display: inline-block;
+  padding: 6px 10px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255,255,255,.7);
+  font-size: 12px;
+  color: var(--muted);
+
+  /* 新增上下间距 */
+  margin-top: 8px;   /* 与上方组件的间距 */
+  margin-bottom: 8px; /* 与下方组件的间距 */
+}    .hero h1{font-size:32px}
+    .hero .sub{font-size:15px;color:var(--muted)}
+    .points{display:grid;gap:10px;margin-top:8px}
+    .point{
+      display:flex;align-items:flex-start;gap:10px;
+      background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-sm);
+      padding:10px 12px;box-shadow:var(--shadow)
+    }
+    .point i{color:var(--primary);font-style:normal}
+    .actions{display:flex;gap:10px;margin-top:6px;flex-wrap:wrap; margin-top: 8px;   /* 与上方组件的间距 */
+      margin-bottom: 8px;}
+    .btn{
+      border:1px solid var(--primary);color:#fff;background:var(--primary);
+      padding:10px 14px;border-radius:12px;font-weight:600;cursor:pointer;
+      transition:transform .12s ease, box-shadow .2s ease, background .15s ease
+    }
+    .btn:hover{transform:translateY(-1px);box-shadow:0 10px 22px rgba(20,118,255,.18)}
+    .btn:active{transform:translateY(0)}
+    .btn.ghost{background:transparent;color:var(--primary)}
+    .btn.ghost:hover{background:rgba(20,118,255,.08)}
+    /* About */
+    .about-grid{display:grid;gap:16px}
+    .info-cards{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}
+    .card{
+      background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+      padding:14px;box-shadow:var(--shadow);transition:transform .15s ease, box-shadow .2s ease
+    }
+    .card:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(20,118,255,.14)}
+    .kv{font-size:12px;color:var(--muted)}
+    .kv .v{display:block;font-weight:700;color:#0b1220;margin-top:2px}
+    
+    /* Info Card Icons */
+    .info-card{
+      position:relative;padding-left:32px
+    }
+ 
+    /* Projects */
+    .grid{display:grid;gap:14px}
+    .projects .grid{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+    .tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+    .tag{padding:4px 8px;border:1px solid rgba(20,118,255,.28);color:var(--primary);border-radius:999px;font-size:12px;background:rgba(20,118,255,.06)}
+    .card h3{margin-bottom:6px}
+    .card .one{font-size:13px;color:#0b1220}
+    .card ul{margin-top:6px}
+    
+    /* Card slider (per project) */
+    .card-slider{position:relative;overflow:hidden;margin-bottom:12px;border-radius:var(--radius-sm)}
+    .card-track{display:flex;transition:transform .35s ease}
+    .card-slide{flex:0 0 100%}
+    .card-nav{position:absolute;top:50%;transform:translateY(-50%);border:none;background:#fff;color:var(--primary);
+      width:32px;height:32px;border-radius:999px;box-shadow:var(--shadow);cursor:pointer;opacity:.9}
+    .card-nav:hover{opacity:1}
+    .card-nav:active{transform:translateY(-50%) scale(.98)}
+    .card-nav.prev{left:6px}
+    .card-nav.next{right:6px}
+    .card-dots{display:flex;justify-content:center;gap:6px;margin-top:6px}
+    .card-dots button{width:8px;height:8px;border-radius:999px;border:1px solid var(--primary);background:transparent;cursor:pointer}
+    .card-dots button[aria-current="true"]{background:var(--primary)}
+    
+    /* Project Images */
+    .project-img{
+      width:100%;height:160px;border-radius:var(--radius-sm);margin-bottom:12px;
+      background:linear-gradient(135deg, #f0f7ff 0%, #e6f0ff 100%);
+      border:1px solid var(--line);display:flex;align-items:center;justify-content:center;
+      color:var(--muted);font-size:14px;position:relative;overflow:hidden
+    }
+    .project-img::before{
+      content:"📱";font-size:24px;margin-bottom:4px;display:block
+    }
+    .project-img::after{
+      content:"点击上传项目截图";font-size:12px;opacity:.7
+    }
+    .project-img:hover{background:linear-gradient(135deg, #e6f0ff 0%, #d9e9ff 100%)}
+    
+    /* Hero Image */
+    .hero-img{
+      width:100%;height:200px;border-radius:var(--radius);margin-bottom:16px;
+      background:linear-gradient(135deg, #f0f7ff 0%, #e6f0ff 100%);
+      border:1px solid var(--line);display:flex;align-items:center;justify-content:center;
+      color:var(--muted);font-size:14px;position:relative;overflow:hidden
+    }
+    .hero-img::before{
+      content:"🚀";font-size:32px;margin-bottom:8px;display:block
+    }
+    .hero-img::after{
+      content:"个人形象照或工作场景";font-size:12px;opacity:.7
+    }
+    .hero-img:hover{background:linear-gradient(135deg, #e6f0ff 0%, #d9e9ff 100%)}
+    /* Image fill helpers */
+    .project-img.filled::before,.project-img.filled::after,.hero-img.filled::before,.hero-img.filled::after{display:none}
+    .project-img img {
+  width: 100%;
+  height: auto;   /* 让高度自适应，保持原比例 */
+  object-fit: contain; /* 防止被裁切 */
+  cursor: zoom-in; /* 鼠标提示可以放大 */
+}
+    /* Experience */
+    .timeline{position:relative;margin-left:6px;padding-left:18px}
+    .timeline:before{content:"";position:absolute;left:6px;top:0;bottom:0;width:2px;background:linear-gradient(180deg, rgba(20,118,255,.4), rgba(20,118,255,0))}
+    .tl-item{position:relative;margin-bottom:14px}
+    .tl-item:before{content:"";position:absolute;left:-2px;top:6px;width:10px;height:10px;border-radius:50%;background:var(--primary)}
+    .tl-title{font-weight:700}
+    .tl-sub{font-size:13px;color:var(--muted)}
+    /* Skills */
+    .skills .grid{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+    .skill-group h3{font-size:16px;margin-bottom:6px}
+    .skill-group ul{margin:6px 0 0 18px}
+    /* Contact */
+    .contact-wrap{display:grid;gap:14px}
+    form{display:grid;gap:10px}
+    label{font-size:13px;color:#0b1220}
+    input,textarea{
+      width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:12px;background:#fff;
+      outline:none;transition:border-color .15s ease, box-shadow .15s ease;font:inherit;color:inherit
+    }
+    input:focus,textarea:focus{border-color:var(--primary);box-shadow:0 0 0 3px rgba(20,118,255,.12)}
+    textarea{min-height:120px;resize:vertical}
+    .field{display:grid;gap:6px}
+    .err{font-size:12px;color:#c0352b;min-height:16px}
+    .contact-info{font-size:14px}
+    .contact-info a{word-break:break-all}
+    /* Footer */
+    footer{padding:24px 20px;border-top:1px solid var(--line);background:#fff;color:var(--muted)}
+    .foot{display:grid;gap:10px;align-items:center}
+    .foot-nav{display:flex;gap:12px;flex-wrap:wrap}
+    .foot-nav a{color:var(--muted)}
+    .foot-copy{font-size:13px}
+    /* Back to top */
+    #backToTop{
+      position:fixed;right:18px;bottom:18px;z-index:40;
+      border:none;background:var(--primary);color:#fff;border-radius:999px;padding:12px 14px;
+      box-shadow:0 14px 24px rgba(20,118,255,.28);cursor:pointer;display:none
+    }
+    #backToTop.show{display:inline-flex}
+    /* Responsive tweaks */
+    @media (min-width:720px){
+      .hero h1{font-size:40px}
+      .hero .sub{font-size:16px}
+      .hero-wrap{grid-template-columns:1.1fr .9fr;align-items:center}
+      .about-grid{grid-template-columns:1.2fr .8fr}
+    }
+  </style>
+</head>
+<body>
+  <!-- Nav -->
+  <header class="nav" role="navigation" aria-label="主导航">
+    <div class="container nav-inner">
+      <div class="brand" aria-label="站点名称">Ryuutoul<span class="brand-dot" aria-hidden="true"></span></div>
+      <nav>
+        <ul>
+          <li><a href="#about">关于我</a></li>
+          <li><a href="#projects">作品集</a></li>
+          <li><a href="#experience">经历</a></li>
+          <li><a href="#skills">技能</a></li>
+          <li><a href="#contact">联系我</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero" id="home" aria-label="首屏">
+      <div class="container hero-wrap">
+        <div>
+          <span class="kicker">新能源 · 数字化 · 端边云</span>
+          <h1>刘涛｜新能源数字化产品经理</h1>
+          <p class="sub">5年新能源物联网产品设计、自动化测试、产品质量管理经验</p>
+            <p class="sub">光伏 / 储能 / 运维 / 工单 / 无人机</p>
+          <div class="points">
+            <div class="point"><i>✔</i><div>主导多个 0→1 产品的全流程，从洞察、方案到落地与增长</div></div>
+            <div class="point"><i>✔</i><div>熟悉光伏仿真设计、光伏运维、无人机巡检、工单流程等解决方案</div></div>
+            <div class="point"><i>✔</i><div>跨硬件/软件/数据协同，空地数据一体化，流程闭环</div></div>
+            <div class="point"><i>✔</i><div>以数据驱动迭代与交付，聚焦可复制的业务增长</div></div>
+          </div>
+          <div class="actions">
+            <a class="btn" href="resume/liutao.pdf" target="_blank" rel="noopener">下载简历</a>
+            <a class="btn ghost" href="#contact">联系我</a>
+          </div>
+        </div>
+        <div>
+          <div class="hero-img filled" aria-label="个人形象照或工作场景">
+            <img src="images/hero.jpg" alt="刘涛工作照占位" onerror="this.parentElement.classList.remove('filled');this.remove();" />
+          </div>
+          <div class="card" aria-hidden="true">
+            <h3 style="margin:0 0 8px">自我评价</h3>
+            <p class="one">专注数字孪生、新能源、设计仿真、运维流程与无人机业务等方向。</p>
+            <ul>
+              <li>具备扎实的需求分析、产品设计、跨部门协作与项目推动能力</li>
+              <li>熟悉软件/硬件测试流程，在产品设计中更注重交付质量和系统可靠性</li>
+              <li>对新能源(光伏/储能)、loT与无人机应用有深刻理解。</li>
+            </ul>
+            <div class="tags">
+              <span class="tag">光伏</span><span class="tag">储能</span><span class="tag">运维</span><span class="tag">无人机</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" aria-label="关于我">
+      <div class="container about-grid">
+        <div>
+          <h2>关于我</h2>
+          <p>我是刘涛，新能源数字化产品经理。拥有超5年的光伏/储能/运维/工单/无人机/AI图像识别/物联网领域产品经验，主导过光伏仿真设计、光伏无人机运维、储能测算、BIPV 定制化、智慧叉车等多类产品的 0→1 设计与落地。擅长将场景与数据结合，用产品化方式解决工程问题，推动业务可复制增长。</p>
+          <div class="info-cards" style="margin-top:10px">
+            <div class="card info-card">
+              <div class=🎓 学历<span class="v">本科全日制 - 环境设计</span></div>
+            </div>
+            <div class="card info-card">
+              <div class=⏱️ 总经验<span class="v">5 年（1 年物联网质量 + 2年软硬件测试 + 2 年新能源产品）</span></div>
+            </div>
+
+            <div class="card info-card">
+              <div class=🤝 合作方向<span class="v">光伏 / 储能 / 运维 / 工单 / 无人机 / AI图像识别 / 物联网数字化产品</span></div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="card">
+            <h3 style="margin-bottom:6px">快速信息</h3>
+            <ul style="margin-left:18px">
+              <li>定位：新能源数字化产品经理</li>
+              <li>优势：场景抽象、指标闭环、跨端协同</li>
+              <li>关注：发电/收益、交付效率、稳定性</li>
+              <li>状态：可交流合作与共创</li>
+            </ul>
+            <div class="tags">
+              <span class="tag">端边云</span><span class="tag">AI巡检</span><span class="tag">三维仿真</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="projects" aria-label="作品集">
+      <div class="container">
+        <h2>作品集</h2>
+        <div class="grid" style="margin-top:10px">
+          <!-- 1 -->
+          <article class="card">
+            <div class="card-slider" data-slider>
+              <button class="card-nav prev" type="button" aria-label="上一张">‹</button>
+              <div class="card-track">
+                <div class="card-slide">
+                  <div class="project-img filled" aria-label="光伏仿真设计软件截图">
+                    <img src="images/pv-standard.jpg" alt="光伏仿真设计软件（标准版）截图1" onerror="this.parentElement.classList.remove('filled');this.remove();" />
+                  </div>
+                </div>
+                <div class="card-slide">
+                  <div class="project-img filled" aria-label="光伏仿真设计软件截图">
+                    <img src="images/pv-standard-2.jpg" alt="光伏仿真设计软件（标准版）截图2" onerror="this.parentElement.classList.remove('filled');this.remove();" />
+                  </div>
+                </div>
+              </div>
+              <button class="card-nav next" type="button" aria-label="下一张">›</button>
+              <div class="card-dots" aria-label="图片指示器"></div>
+            </div>
+            <h3>光伏仿真设计软件（标准版）</h3>
+            <p class="one">面向设计院与经销商的快速光伏方案生成工具</p>
+            <ul>
+              <li>3 分钟生成屋顶/地面方案，支持遮挡/倾角/方位计算</li>
+              <li>内置组件库与电气校核，误差 &lt; 2%</li>
+              <li>项目模板化复用，交付效率提升 40%</li>
+              <li>上线 6 个月服务 200+ 项目</li>
+            </ul>
+            <div class="tags"><span class="tag">仿真</span><span class="tag">光伏</span><span class="tag">Web</span></div>
+          </article>
+          <!-- 2 -->
+          <article class="card">
+            <div class="card-slider" data-slider>
+              <button class="card-nav prev" type="button" aria-label="上一张">‹</button>
+              <div class="card-track">
+                <div class="card-slide">
+                  <div class="project-img filled" aria-label="光伏仿真设计软件无人机版截图">
+                    <img src="images/pv-uav.jpg" alt="光伏仿真设计软件（无人机版）截图1" onerror="this.parentElement.classList.remove('filled');this.remove();" />
+                  </div>
+                </div>
+                <div class="card-slide">
+                  <div class="project-img filled" aria-label="光伏仿真设计软件无人机版截图">
+                    <img src="images/pv-uav-2.jpg" alt="光伏仿真设计软件（无人机版）截图2" onerror="this.parentElement.classList.remove('filled');this.remove();" />
+                  </div>
+                </div>
+              </div>
+              <button class="card-nav next" type="button" aria-label="下一张">›</button>
+              <div class="card-dots" aria-label="图片指示器"></div>
+            </div>
+            <h3>光伏仿真设计软件（无人机版）</h3>
+            <p class="one">结合无人机航测的数据驱动高精度仿真工具</p>
+            <ul>
+              <li>自动处理点云/DSM，屋顶识别准确率 95%</li>
+              <li>自研铺排算法，发电量误差 &lt; 1.5%</li>
+              <li>采集到方案发布 T+1，交付提速显著</li>
+              <li>已覆盖 3 个城市园区</li>
+            </ul>
+            <div class="tags"><span class="tag">无人机</span><span class="tag">仿真</span><span class="tag">三维</span></div>
+          </article>
+          <!-- 3 -->
+          <article class="card">
+            <div class="card-slider" data-slider>
+              <button class="card-nav prev" type="button" aria-label="上一张">‹</button>
+              <div class="card-track">
+                <div class="card-slide">
+                  <div class="project-img filled" aria-label="光伏无人机运维软件截图">
+                    <img src="images/uav-om.jpg" alt="光伏无人机运维软件截图1" onerror="this.parentElement.classList.remove('filled');this.remove();" />
+                  </div>
+                </div>
+                <div class="card-slide">
+                  <div class="project-img filled" aria-label="光伏无人机运维软件截图">
+                    <img src="images/uav-om-2.jpg" alt="光伏无人机运维软件截图2" onerror="this.parentElement.classList.remove('filled');this.remove();" />
+                  </div>
+                </div>
+              </div>
+              <button class="card-nav next" type="button" aria-label="下一张">›</button>
+              <div class="card-dots" aria-label="图片指示器"></div>
+            </div>
+            <h3>光伏无人机运维软件</h3>
+            <p class="one">巡检、识别、派修一体化的运维闭环平台</p>
+            <ul>
+              <li>航线规划 + AI 热斑检测，缺陷识别 F1 = 0.92</li>
+              <li>单站巡检时长 2 天 → 6 小时</li>
+              <li>缺陷处理闭环，MTTR 下降 35%</li>
+              <li>与 CMMS 打通，自动派单准确率 98%</li>
+            </ul>
+            <div class="tags"><span class="tag">运维</span><span class="tag">无人机</span><span class="tag">AI</span></div>
+          </article>
+          <!-- 4 -->
+          <article class="card">
+            <div class="card-slider" data-slider>
+              <button class="card-nav prev" type="button" aria-label="上一张">‹</button>
+              <div class="card-track">
+                <div class="card-slide">
+                  <div class="project-img filled" aria-label="零碳宝盒小程序截图">
+                    <img src="images/zerocarbon-miniapp.jpg" alt="零碳宝盒小程序截图1" onerror="this.parentElement.classList.remove('filled');this.remove();" />
+                  </div>
+                </div>
+                <div class="card-slide">
+                  <div class="project-img filled" aria-label="零碳宝盒小程序截图">
+                    <img src="images/zerocarbon-miniapp-2.jpg" alt="零碳宝盒小程序截图2" onerror="this.parentElement.classList.remove('filled');this.remove();" />
+                  </div>
+                </div>
+              </div>
+              <button class="card-nav next" type="button" aria-label="下一张">›</button>
+              <div class="card-dots" aria-label="图片指示器"></div>
+            </div>
+            <h3>零碳宝盒小程序</h3>
+            <p class="one">面向业主的发电/收益可视化与告警触达</p>
+            <ul>
+              <li>自助查看发电与收益，DAU 提升 3.2 倍</li>
+              <li>组件级告警订阅，消息触达率 97%</li>
+              <li>低代码搭建，迭代周期缩短 50%</li>
+              <li>兼容 6 套逆变器/电表协议</li>
+            </ul>
+            <div class="tags"><span class="tag">小程序</span><span class="tag">可视化</span><span class="tag">物联</span></div>
+          </article>
+          <!-- 5 -->
+          <article class="card">
+            <div class="card-slider" data-slider>
+              <button class="card-nav prev" type="button" aria-label="上一张">‹</button>
+              <div class="card-track">
+                <div class="card-slide">
+                  <div class="project-img filled" aria-label="储能测算小程序截图">
+                    <img src="images/storage-calc.jpg" alt="储能测算小程序截图1" onerror="this.parentElement.classList.remove('filled');this.remove();" />
+                  </div>
+                </div>
+                <div class="card-slide">
+                  <div class="project-img filled" aria-label="储能测算小程序截图">
+                    <img src="images/storage-calc-2.jpg" alt="储能测算小程序截图2" onerror="this.parentElement.classList.remove('filled');this.remove();" />
+                  </div>
+                </div>
+              </div>
+              <button class="card-nav next" type="button" aria-label="下一张">›</button>
+              <div class="card-dots" aria-label="图片指示器"></div>
+            </div>
+            <h3>储能测算小程序</h3>
+            <p class="one">容量配比、收益测算与方案导出的轻量化工具</p>
+            <ul>
+              <li>10 分钟完成容量配比与收益测算</li>
+              <li>覆盖工商业/户用两类场景</li>
+              <li>引入电价时序/需响应，收益提升 8–12%</li>
+              <li>支持 PDF 导出与一键分享</li>
+            </ul>
+            <div class="tags"><span class="tag">储能</span><span class="tag">测算</span><span class="tag">小程序</span></div>
+          </article>
+          <!-- 6 -->
+          <article class="card">
+            <div class="card-slider" data-slider>
+              <button class="card-nav prev" type="button" aria-label="上一张">‹</button>
+              <div class="card-track">
+                <div class="card-slide">
+                  <div class="project-img filled" aria-label="BIPV 光伏设计定制化软件截图">
+                    <img src="images/bipv-custom.jpg" alt="BIPV 光伏设计定制化软件截图1" onerror="this.parentElement.classList.remove('filled');this.remove();" />
+                  </div>
+                </div>
+                <div class="card-slide">
+                  <div class="project-img filled" aria-label="BIPV 光伏设计定制化软件截图">
+                    <img src="images/bipv-custom-2.jpg" alt="BIPV 光伏设计定制化软件截图2" onerror="this.parentElement.classList.remove('filled');this.remove();" />
+                  </div>
+                </div>
+              </div>
+              <button class="card-nav next" type="button" aria-label="下一张">›</button>
+              <div class="card-dots" aria-label="图片指示器"></div>
+            </div>
+            <h3>BIPV 光伏设计定制化软件</h3>
+            <p class="one">参数化幕墙与构件库，设计到 BOM 的一体化平台</p>
+            <ul>
+              <li>参数化幕墙/构件库，三维实时预览</li>
+              <li>复杂异形铺排支持率 100%</li>
+              <li>设计到 BOM 联动，手工统计减少 90%</li>
+              <li>支持个性化色板与透光率</li>
+            </ul>
+            <div class="tags"><span class="tag">BIPV</span><span class="tag">定制化</span><span class="tag">三维</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience" aria-label="经历">
+      <div class="container">
+        <h2>经历</h2>
+        <div class="timeline" style="margin-top:10px">
+          <div class="tl-item">
+            <div class="tl-title">2023.10 – 至今｜安太数字能源（常州）技术有限公司｜产品经理</div>
+            <div class="tl-sub">负责光伏/储能方向的产品规划与落地，围绕数字孪生/设计/运维/工单/无人机方向推动产品落地。</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-title">2022.03 – 2023.06｜江苏祥康科技有限公司｜产品质量管理</div>
+            <div class="tl-sub">主导数智化叉车项目，与公司其他特种设备信息化项目的质量管理、软硬件测试与项目推进。</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-title">2020.07 – 2021.12｜江苏协创有限公司｜测试工程师</div>
+            <div class="tl-sub">参与公司商城类web及app软件测试与项目推进。</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="skills" aria-label="技能">
+      <div class="container">
+        <h2>技能</h2>
+        <div class="grid" style="margin-top:10px">
+          <div class="card skill-group">
+            <h3>📊 产品与方法论</h3>
+            <ul>
+              <li>需求洞察、用户旅程、PRD/原型</li>
+              <li>增长模型、A/B 测试、指标体系</li>
+              <li>Scrum/看板、里程碑与风险管理</li>
+            </ul>
+          </div>
+          <div class="card skill-group">
+            <h3>⚡ 能源与电力</h3>
+            <ul>
+              <li>光伏系统设计、组件/逆变器匹配</li>
+              <li>储能容量配比、EMS/BMS 基础</li>
+              <li>并网规范、发电量与收益测算</li>
+            </ul>
+          </div>
+          <div class="card skill-group">
+            <h3>💻 数据与工具</h3>
+            <ul>
+              <li>SQL/Python 基础、Power BI</li>
+              <li>Yolov图像识别模型</li>
+              <li>墨刀/Figma/GPT/Jira/禅道</li>
+            </ul>
+          </div>
+          <div class="card skill-group">
+            <h3>🤝 软技能</h3>
+            <ul>
+              <li>跨部门协作与推进、沟通影响力</li>
+              <li>结构化表达与汇报、文档写作</li>
+              <li>结果导向与自我驱动</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" aria-label="联系我">
+      <div class="container contact-wrap">
+        <h2>联系我</h2>
+          <div class="card contact-info">
+            <h3 style="margin-bottom:6px">联系方式</h3>
+            <p>邮箱：<a href="mailto:hello@example.com">1508490982@qq.com</a></p>
+            <p>电话：<a href="tel:13800000000">13092588758(微信同号)</a></p>
+            <div class="tags" style="margin-top:8px">
+              <span class="tag">人事聘用</span><span class="tag">产品共创</span><span class="tag">方案咨询</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer role="contentinfo">
+    <div class="container foot">
+      <div class="foot-copy">版权声明 © 2025 刘涛</div>
+      <div class="foot-nav" aria-label="快速导航">
+        <a href="#about">关于我</a>
+        <a href="#projects">作品集</a>
+        <a href="#experience">经历</a>
+        <a href="#skills">技能</a>
+        <a href="#contact">联系我</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back To Top -->
+  <button id="backToTop" aria-label="回到顶部">↑</button>
+<script>
+document.querySelectorAll('[data-slider]').forEach(slider => {
+  const track = slider.querySelector('.card-track');
+  const slides = track.children;
+  const dots = slider.querySelector('.card-dots');
+  let index = 0;
+
+  // 创建 dots
+  Array.from(slides).forEach((_, i) => {
+    const btn = document.createElement('button');
+    if (i === 0) btn.setAttribute('aria-current', 'true');
+    btn.addEventListener('click', () => { goToSlide(i); });
+    dots.appendChild(btn);
+  });
+
+  function updateDots() {
+    Array.from(dots.children).forEach((btn, i) => {
+      btn.setAttribute('aria-current', i === index ? 'true' : 'false');
+    });
+  }
+
+  function goToSlide(i) {
+    index = i;
+    track.style.transform = `translateX(-${100 * index}%)`;
+    updateDots();
+  }
+
+  slider.querySelector('.prev').addEventListener('click', () => goToSlide(index - 1 < 0 ? slides.length - 1 : index - 1));
+  slider.querySelector('.next').addEventListener('click', () => goToSlide((index + 1) % slides.length));
+});
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const sliders = document.querySelectorAll("[data-slider]");
+  
+    sliders.forEach(slider => {
+      const track = slider.querySelector(".card-track");
+      const slides = slider.querySelectorAll(".card-slide");
+      const dots = slider.querySelectorAll(".card-dots button");
+      let index = 0;
+      const total = slides.length;
+  
+      // 更新显示
+      function updateSlider() {
+        track.style.transform = `translateX(-${index * 100}%)`;
+        if(dots.length) {
+          dots.forEach((dot,i)=>dot.setAttribute("aria-current", i===index));
+        }
+      }
+  
+      // 下一张
+      function nextSlide() {
+        index = (index + 1) % total;
+        updateSlider();
+      }
+  
+      // 上一张
+      function prevSlide() {
+        index = (index - 1 + total) % total;
+        updateSlider();
+      }
+  
+      // 自动轮播
+      let interval = setInterval(nextSlide, 4000); // 每4秒切换
+  
+      // 按钮控制
+      const btnNext = slider.querySelector(".card-nav.next");
+      const btnPrev = slider.querySelector(".card-nav.prev");
+      btnNext.addEventListener("click", () => { nextSlide(); resetInterval(); });
+      btnPrev.addEventListener("click", () => { prevSlide(); resetInterval(); });
+  
+      // 指示点控制
+      if(dots.length){
+        dots.forEach((dot,i) => {
+          dot.addEventListener("click", () => { index=i; updateSlider(); resetInterval(); });
+        });
+      }
+  
+      // 点击或手动切换重置自动轮播
+      function resetInterval(){
+        clearInterval(interval);
+        interval = setInterval(nextSlide, 4000);
+      }
+  
+      updateSlider();
+    });
+  });
+  </script>
+  <!-- 放大查看容器 -->
+<div id="lightbox" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;
+background:rgba(0,0,0,0.85);justify-content:center;align-items:center;z-index:1000;">
+<img src="" alt="放大图" style="max-width:90%;max-height:90%;border-radius:10px;box-shadow:0 0 20px rgba(0,0,0,0.6)">
+</div>
+
+<script>
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = lightbox.querySelector('img');
+
+document.querySelectorAll('.project-img img').forEach(img => {
+  img.addEventListener('click', () => {
+    lightboxImg.src = img.src;
+    lightbox.style.display = 'flex';
+  });
+});
+
+lightbox.addEventListener('click', () => {
+  lightbox.style.display = 'none';
+});
+</script>
+  <script>
+    (function(){
+      const nav = document.querySelector('.nav');
+      const navHeight = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--nav-h')) || 64;
+      const backBtn = document.getElementById('backToTop');
+      // Carousel
+      const carousel = document.getElementById('projectsCarousel');
+      const track = carousel ? carousel.querySelector('.carousel-track') : null;
+      const items = carousel ? Array.from(carousel.querySelectorAll('.carousel-item')) : [];
+      const prevBtn = carousel ? carousel.querySelector('.carousel-btn.prev') : null;
+      const nextBtn = carousel ? carousel.querySelector('.carousel-btn.next') : null;
+      const dotsWrap = carousel ? carousel.querySelector('.carousel-dots') : null;
+      let index = 0;
+      function perView(){
+        const style = getComputedStyle(carousel);
+        const per = parseFloat(style.getPropertyValue('--per')) || 1;
+        return Math.max(1, Math.round(per));
+      }
+      function update(){
+        if(!track) return;
+        const view = perView();
+        const maxIndex = Math.max(0, items.length - view);
+        index = Math.min(Math.max(0, index), maxIndex);
+        const percent = -(index * (100 / view));
+        track.style.transform = `translateX(${percent}%)`;
+        if(dotsWrap){
+          Array.from(dotsWrap.children).forEach((b, i)=>{
+            b.setAttribute('aria-current', i === index ? 'true' : 'false');
+          });
+        }
+      }
+      function buildDots(){
+        if(!dotsWrap) return;
+        dotsWrap.innerHTML = '';
+        const view = perView();
+        const pages = Math.max(1, items.length - view + 1);
+        for(let i=0;i<pages;i++){
+          const b = document.createElement('button');
+          if(i===0) b.setAttribute('aria-current','true');
+          b.addEventListener('click', ()=>{ index = i; update(); });
+          dotsWrap.appendChild(b);
+        }
+      }
+      if(carousel && track && items.length){
+        buildDots();
+        update();
+        prevBtn && prevBtn.addEventListener('click', ()=>{ index -= 1; update(); });
+        nextBtn && nextBtn.addEventListener('click', ()=>{ index += 1; update(); });
+        window.addEventListener('resize', ()=>{ buildDots(); update(); });
+      }
+
+      // 平滑滚动（含导航高度修正）
+      document.querySelectorAll('a[href^="#"]').forEach(function(a){
+        a.addEventListener('click', function(e){
+          const hash = a.getAttribute('href');
+          if(!hash || hash === '#') return;
+          const el = document.querySelector(hash);
+          if(!el) return;
+          e.preventDefault();
+          const top = el.getBoundingClientRect().top + window.pageYOffset - (navHeight + 12);
+          window.scrollTo({ top, behavior:'smooth' });
+          history.replaceState(null, '', hash);
+        });
+      });
+
+      // 导航阴影 + 回到顶部显隐
+      function onScroll(){
+        const y = window.scrollY || window.pageYOffset;
+        if(y > 8){ nav.classList.add('stuck'); } else { nav.classList.remove('stuck'); }
+        if(y > 500){ backBtn.classList.add('show'); } else { backBtn.classList.remove('show'); }
+      }
+      window.addEventListener('scroll', onScroll, { passive:true });
+      onScroll();
+
+      // 回到顶部按钮
+      backBtn.addEventListener('click', function(){
+        window.scrollTo({ top:0, behavior:'smooth' });
+      });
+
+      // 表单校验与演示提交
+      const form = document.getElementById('contactForm');
+      const errName = document.getElementById('err-name');
+      const errEmail = document.getElementById('err-email');
+      const errMsg = document.getElementById('err-message');
+
+      function validateEmail(v){
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+      }
+
+      form.addEventListener('submit', function(e){
+        e.preventDefault();
+        errName.textContent = '';
+        errEmail.textContent = '';
+        errMsg.textContent = '';
+
+        const name = (document.getElementById('name').value || '').trim();
+        const email = (document.getElementById('email').value || '').trim();
+        const message = (document.getElementById('message').value || '').trim();
+
+        let ok = true;
+        if(name.length < 2){
+          errName.textContent = '请填写不少于 2 个字符的姓名';
+          ok = false;
+        }
+        if(!validateEmail(email)){
+          errEmail.textContent = '请填写有效的邮箱地址';
+          ok = false;
+        }
+        if(message.length < 10){
+          errMsg.textContent = '请填写不少于 10 个字符的信息';
+          ok = false;
+        }
+
+        if(ok){
+          alert('消息已发送（演示）');
+          form.reset();
+        }
+      }, false);
+    })();
+  </script>
+</body>
+</html>
